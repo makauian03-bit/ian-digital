@@ -297,3 +297,101 @@ scroll-behavior: auto;
 }
 
 }
+/* Ian Digital - Professional Design Improvements */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Smooth navigation effects */
+nav a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #38bdf8;
+    transform: translateY(-2px);
+}
+
+/* Modern button effects */
+button,
+.button {
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+button:hover,
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.2);
+}
+
+/* Modern card effects */
+.card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth heading animation */
+header h1 {
+    animation: ianFadeIn 0.8s ease-out;
+}
+
+@keyframes ianFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+.site-logo {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+.logo-link {
+    display: inline-block;
+}
+
+.logo-link:hover {
+    opacity: 0.85;
+}
+.service-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 12px;
+}
+/* Website Design picture */
+.card img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 12px;
+}
