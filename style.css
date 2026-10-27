@@ -8,14 +8,14 @@
 }
 
 :root {
-    --primary-color: #0f172a;       /* Deep Slate / Dark Navy */
-    --accent-color: #2563eb;        /* Vibrant Professional Blue */
-    --accent-hover: #1d4ed8;        /* Darker Blue on Hover */
-    --text-color: #334155;          /* Muted Dark Gray for readable text */
-    --text-light: #64748b;          /* Lighter Gray for secondary info */
-    --bg-light: #f8fafc;            /* Off-white / light background */
-    --bg-white: #ffffff;
-    --border-color: #e2e8f0;
+    --primary-color: #f8fafc;       /* Light text for dark mode */
+    --accent-color: #8b5cf6;        /* Vibrant Purple Accent */
+    --accent-hover: #7c3aed;        /* Deeper Purple on Hover */
+    --text-color: #cbd5e1;          /* Muted Light Gray for body text */
+    --text-light: #94a3b8;          /* Lighter Gray for secondary info */
+    --bg-dark: #0f172a;           /* Deep Dark Blue (Main Background) */
+    --bg-card: #1e293b;           /* Slightly lighter dark blue for cards/sections */
+    --border-color: #334155;        /* Subtle dark-mode border */
     --radius: 10px;
     --transition: all 0.3s ease;
 }
@@ -27,7 +27,7 @@ html {
 
 body {
     color: var(--text-color);
-    background-color: var(--bg-white);
+    background-color: var(--bg-dark);
     line-height: 1.6;
 }
 
@@ -96,7 +96,7 @@ h1, h2, h3 {
 
 .button.primary {
     background-color: var(--accent-color);
-    color: var(--bg-white);
+    color: #ffffff;
 }
 
 .button.primary:hover {
@@ -111,7 +111,8 @@ h1, h2, h3 {
 }
 
 .button.secondary:hover {
-    border-color: var(--primary-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
     transform: translateY(-2px);
 }
 
@@ -123,9 +124,9 @@ h1, h2, h3 {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(15, 23, 42, 0.9); /* Dark blue glass effect */
     backdrop-filter: blur(10px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     z-index: 1000;
 }
 
@@ -182,12 +183,11 @@ h1, h2, h3 {
    ========================================== */
 .hero {
     padding: 100px 0 120px;
-    background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #172033 100%);
     text-align: left;
 }
 
 .hero-content h1 {
-    font-size.clamp: 2.5rem;
     font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.15;
     margin-bottom: 20px;
@@ -221,7 +221,7 @@ h1, h2, h3 {
 }
 
 .card {
-    background-color: var(--bg-white);
+    background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
     padding: 30px;
@@ -233,8 +233,8 @@ h1, h2, h3 {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
-    border-color: transparent;
+    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.15);
+    border-color: var(--accent-color);
 }
 
 .card .icon {
@@ -260,11 +260,12 @@ h1, h2, h3 {
     margin-bottom: 15px;
     display: block;
     flex-shrink: 0;
+    opacity: 0.85;
 }
 
 /* Project Specific Cards */
 .project-card {
-    background-color: var(--bg-light);
+    background-color: #172033;
     border: 1px solid var(--border-color);
 }
 
@@ -280,7 +281,7 @@ h1, h2, h3 {
    6. Contact Section & Footer
    ========================================== */
 .contact {
-    background-color: var(--bg-light);
+    background-color: #172033;
     text-align: left;
 }
 
@@ -301,9 +302,16 @@ h1, h2, h3 {
     text-decoration: underline;
 }
 
+/* Input background tweaks for dark mode */
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--bg-card) !important;
+    color: var(--primary-color) !important;
+}
+
 .footer {
-    background-color: var(--primary-color);
-    color: #94a3b8;
+    background-color: #090d16;
+    color: #64748b;
     text-align: center;
     padding: 30px 0;
     font-size: 0.9rem;
@@ -329,8 +337,8 @@ h1, h2, h3 {
         top: 75px;
         left: 0;
         width: 100%;
-        background-color: var(--bg-white);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        background-color: var(--bg-card);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
         padding: 25px 20px;
         gap: 20px;
         text-align: center;
@@ -354,7 +362,7 @@ h1, h2, h3 {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
 }
 
 /* ==========================================
@@ -365,7 +373,7 @@ h1, h2, h3 {
     bottom: 30px;
     right: 30px;
     background-color: var(--accent-color);
-    color: var(--bg-white);
+    color: #ffffff;
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -373,7 +381,7 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 999;
     opacity: 0;
     visibility: hidden;
