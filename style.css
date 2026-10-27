@@ -347,3 +347,14 @@ h1, h2, h3 {
     }
 }
 
+/* ==========================================
+   8. Contact Form Enhancements
+   ========================================== */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+   
